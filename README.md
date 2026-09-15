@@ -18,7 +18,7 @@ This project implements an end-to-end, serverless Data Lakehouse architecture on
 - **Visualization Layer:** Amazon QuickSight (Business Intelligence)
 
 ## 🗂️ Dataset Description
-The system processes 1,000+ fashion products sourced from Kaggle, simulating a real-world multimodal environment across three distinct formats:
+The system processes 1,000+ fashion products sourced from the [Fashion Product Images Dataset on Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset/data). It simulates a real-world multimodal environment across three distinct formats:
 1. **Structured Metadata (`styles.csv`):** Core inventory attributes (ID, gender, masterCategory, articleType).
 2. **Semi-Structured Attributes (`product_metadata.jsonl`):** Deep, nested attributes including market data (brandName, price) and technical specs.
 3. **Unstructured Visual Assets (`.jpg`):** High-resolution product images mapped via unique ID keys.
@@ -52,6 +52,8 @@ The system processes 1,000+ fashion products sourced from Kaggle, simulating a r
 .
 ├── src/
 │   ├── lambda_function.py      # Primary ETL logic
-│   └── athena_schema.sql       # Schema cataloging logic
+│   ├── athena_schema.sql       # Schema cataloging logic
+│   ├── product_metadata.jsonl  # Semi-structured product metadata
+│   └── styles.csv              # Structured core inventory attributes
 ├── dashboard/                  # Analytical outputs and QuickSight dashboard exports
 └── README.md
